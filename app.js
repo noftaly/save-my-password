@@ -72,8 +72,8 @@ app.use(morgan('dev'));
 app.disable('x-powered-by');
 
 app.get('/', routes.index);
-app.get('/about', (_req, res) => res.render('about', { title: 'À propos' }));
-app.get('/about/legals', (_req, res) => res.render('legals', { title: 'Mentions légales' }));
+app.get('/about', routes.about);
+app.get('/about/legals', routes.legals);
 
 app.listen(port, () => {
   console.log('App is running at %s in %s mode', host, app.get('env'));
