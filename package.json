@@ -1,0 +1,44 @@
+{
+  "name": "save-my-password",
+  "version": "0.1.0",
+  "description": "A simple yet secured password manager",
+  "main": "app.js",
+  "private": false,
+  "scripts": {
+    "start": "concurrently \"npm run watch:js\" \"npm run watch:sass\"",
+    "watch:js": "nodemon --exec babel-node app.js",
+    "watch:sass": "node-sass -w sass/ -o public/css/ -r",
+    "build:sass": "node-sass sass/ -o public/css/ -r",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "author": "Elliot 'noftaly' Maisl <elliot.maisl@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-hbs": "^2.3.0",
+    "express-session": "^1.17.0",
+    "helmet": "^3.21.2",
+    "mongodb": "^3.3.5",
+    "mongoose": "^5.7.13",
+    "morgan": "^1.9.1",
+    "node-sass": "^4.13.0",
+    "nodemailer": "^6.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.5",
+    "concurrently": "^5.0.0",
+    "eslint": "^6.7.2",
+    "eslint-config-noftalint": "^1.0.4",
+    "nodemon": "^2.0.1"
+  }
+}

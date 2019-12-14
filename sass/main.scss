@@ -1,0 +1,791 @@
+/* Template 'Evolo' by Inovatik */
+@import './colors.scss';
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font: "Raleway", sans-serif;
+}
+
+body, p {
+  color: $gray-dark-1;
+  font: 400 0.875rem/1.375rem "Raleway", sans-serif;
+}
+
+.p-large {
+  font: 400 1rem/1.5rem "Raleway", sans-serif;
+}
+
+.li-space-lg li {
+  margin-bottom: 0.25rem;
+}
+
+h1, h2, h3, h4, h5, h6, a, a:hover {
+  color: $gray-dark-3;
+}
+
+h1 { font: 700 3rem/3.5rem "Raleway", sans-serif; }
+
+h2 { font: 700 2.25rem/2.75rem "Raleway", sans-serif; }
+
+h3 { font: 700 1.75rem/2rem "Raleway", sans-serif; }
+
+h4 { font: 700 1.375rem/1.875rem "Raleway", sans-serif; }
+
+h5 { font: 700 1.125rem/1.625rem "Raleway", sans-serif; }
+
+h6 { font: 700 1rem/1.5rem "Raleway", sans-serif; }
+
+.testimonial-text { font: italic 400 1rem/1.5rem "Raleway", sans-serif; }
+
+.testimonial-author { font: 700 1rem/1.5rem "Raleway", sans-serif; }
+
+a, a:hover {
+  text-decoration: underline;
+}
+
+.turquoise {
+  color: $turquoise;
+}
+
+.white {
+  color: $white;
+}
+
+.btn-solid-lg {
+  display: inline-block;
+  padding: 1.375rem 2.625rem 1.375rem 2.625rem;
+  border: 0.125rem solid $turquoise;
+  border-radius: 2rem;
+  background-color: $turquoise;
+  color: $white;
+  font: 700 0.75rem/0 "Raleway", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: transparent;
+    color: $turquoise;
+    text-decoration: none;
+  }
+}
+
+.img-flip {
+  transform: scaleX(-1);
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.form-group.has-error.has-danger {
+  margin-bottom: 0.625rem;
+}
+
+.form-group.has-error.has-danger .help-block.with-errors ul {
+  margin-top: 0.375rem;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+
+  & > input,
+  & > label {
+    height: 3.125rem;
+    padding: 0.75rem;
+  }
+
+  & > textarea {
+    padding: 0.75rem;
+  }
+  
+  & > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: $gray-dark-2;
+    pointer-events: none;
+    cursor: text;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all 0.1s ease-in-out;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: transparent;
+  }
+
+  input:not(:placeholder-shown),
+  input:focus,
+  textarea:not(:placeholder-shown),
+  textarea:focus {
+    padding-top: 1.25rem;
+    padding-bottom: .25rem;
+  }
+
+  input:not(:placeholder-shown) ~ label,
+  input:focus ~ label,
+  textarea:not(:placeholder-shown) ~ label,
+  textarea:focus ~ label {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 12px;
+    color: $gray-ligth-3;
+  }
+}
+
+.form-control-input {
+  display: block; /* needed for proper display of the label in Firefox, IE, Edge */
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 0.06rem;
+  padding-left: 1.3rem;
+  border: 1px solid $gray-light-1;
+  border-radius: 0.25rem;
+  background-color: $white;
+  color: $gray-dark-1;
+  transition: all 0.2s;
+  -webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+}
+
+.form-control-textarea {
+  display: block; /* used to eliminate a bottom gap difference between Chrome and IE/FF */
+  width: 100%;
+  height: 8rem; /* used instead of html rows to normalize height between Chrome and IE/FF */
+  padding-top: 1.25rem;
+  padding-left: 1.3rem;
+  border: 1px solid $gray-light-1;
+  border-radius: 0.25rem;
+  background-color: $white;
+  color: $gray-dark-1;
+  transition: all 0.2s;
+}
+
+.form-control-input:focus,
+.form-control-textarea:focus {
+  border: 1px solid $gray-light-2;
+  outline: none;
+}
+
+.form-control-input:hover,
+.form-control-textarea:hover {
+  border: 1px solid $gray-light-2;
+}
+
+.checkbox {
+  font: 400 0.75rem/1.25rem "Raleway", sans-serif;
+}
+
+input[type="checkbox"] {
+  vertical-align: -15%;
+  margin-right: 0.375rem;
+}
+
+.form-control-submit-button {
+  display: inline-block;
+  width: 100%;
+  height: 3.125rem;
+  border: 1px solid $turquoise;
+  border-radius: 1.5rem;
+  background-color: $turquoise;
+  color: $white;
+  font: 700 0.75rem/1.75rem "Raleway", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: transparent;
+    color: $turquoise;
+  }
+}
+
+/* Form Success And Error Message Formatting */
+#rmsgSubmit.h3.text-center.tada.animated,
+#cmsgSubmit.h3.text-center.tada.animated,
+#rmsgSubmit.h3.text-center,
+#cmsgSubmit.h3.text-center {
+  display: block;
+  margin-bottom: 0;
+  color: $gray-dark-1;
+  font: 400 1.125rem/1rem "Raleway", sans-serif;
+}
+
+.help-block.with-errors {
+  .list-unstyled {
+    color: $gray-dark-1;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-align: left;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+/**************************/
+/*     02. Navigation     */
+/**************************/
+.navbar-custom {
+  background-color: $white;
+  box-shadow: 0 0.0625rem 0.375rem 0 $black-shadow;
+  font: 600 0.875rem/0.875rem "Raleway", sans-serif;
+  transition: all 0.2s;
+
+
+  .navbar-brand.logo-image img {
+    height: 3rem;
+  }
+
+  .navbar-nav {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-item .nav-link {
+    padding: 0.625rem 0.75rem;
+    color: $gray-dark-3;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .nav-item .nav-link:hover,
+  .nav-item .nav-link.active {
+    color: $turquoise;
+  }
+
+  .dropdown:hover > .dropdown-menu {
+    display: block; /* this makes the dropdown menu stay open while hovering it */
+    min-width: auto;
+    animation: fadeDropdown 0.2s;
+  }
+
+  @keyframes fadeDropdown {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .dropdown-toggle:focus {
+    outline: 0;
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: $white;
+  }
+
+  .dropdown-item {
+    color: $gray-dark-3;
+    text-decoration: none;
+
+    &:not(:first-child) {
+      margin-top: 0.3rem;
+    }
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+  .dropdown-item .item-text {
+    font: 600 0.875rem/0.875rem "Raleway", sans-serif;
+  }
+
+  .dropdown-item:hover .item-text {
+    color: $turquoise;
+  }
+
+  hr {
+    width: 100%;
+    height: 1px;
+    margin: 0.75rem auto;
+    border: none;
+    background-color: $gray-light-1;
+    opacity: 0.4;
+  }
+
+  .navbar-toggler {
+    border: none;
+    color: $gray-dark-3;
+    font-size: 2rem;
+  }
+
+  button[aria-expanded="false"] .navbar-toggler-awesome.fas {
+    &.fa-times { display: none; }
+    &.fa-bars { display: inline-block; }
+  }
+
+  button[aria-expanded="true"] .navbar-toggler-awesome.fas {
+    &.fa-bars { display: none; }
+    &.fa-times { display: inline-block; }
+  }
+}
+
+/*********************/
+/*    03. Top     */
+/*********************/
+.top {
+  .top-content {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .text-container {
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    margin-bottom: 1.125rem;
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+  }
+
+  .p-large {
+    margin-bottom: 1.875rem;
+  }
+}
+
+/************************/
+/*     04. Services     */
+/************************/
+.cards-1 {
+  padding-top: 4rem;
+  padding-bottom: 1.625rem;
+  text-align: center;
+
+  .card {
+    max-width: 21rem;
+    margin-right: auto;
+    margin-bottom: 4.5rem;
+    margin-left: auto;
+    padding: 3.25rem 2rem 2rem 2rem;
+    border: 1px solid $gray-light-1;
+    border-radius: 0.5rem;
+    background: transparent;
+  }
+
+  .card-image {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/*********************/
+/*     06. Video     */
+/*********************/
+.video-container {
+  padding-bottom: 6.125rem;
+
+
+  .image-container {
+    margin-bottom: 2.25rem;
+    img {
+      border-radius: 0.5rem;
+    }
+  }
+
+  .video-wrapper {
+    position: relative;
+  }
+
+  /* Video Play Button */
+  .video-play-button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    display: block;
+    box-sizing: content-box;
+    width: 2rem;
+    height: 2.75rem;
+    padding: 1.125rem 1.25rem 1.125rem 1.75rem;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 4.75rem;
+      height: 4.75rem;
+      border-radius: 50%;
+      background: $turquoise;
+      animation: pulse-border 1.5s ease-out infinite;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 4.375rem;
+      height: 4.375rem;
+      border-radius: 50%;
+      background: $turquoise;
+      transition: all 0.2s;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    span {
+      position: relative;
+      display: block;
+      z-index: 3;
+      top: 0.375rem;
+      left: 0.25rem;
+      width: 0;
+      height: 0;
+      border-left: 1.625rem solid $white;
+      border-top: 1rem solid transparent;
+      border-bottom: 1rem solid transparent;
+    }
+  }
+
+  @keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+      opacity: 0;
+    }
+  }
+}
+
+/****************************/
+/*     06. Testimonials     */
+/****************************/
+.slider {
+  padding-top: 7.5rem;
+  padding-bottom: 7rem;
+  background: url("../images/testimonials-background.jpg") center center no-repeat;
+  background-size: cover;
+
+  .image-container {
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .slider-container {
+    position: relative;
+  }
+
+  .swiper-container {
+    position: static;
+    width: 90%;
+    text-align: center;
+  }
+
+  .swiper-button-prev:focus,
+  .swiper-button-next:focus {
+    outline: none;
+  }
+
+  .swiper-button-prev {
+    left: -0.5rem;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23626262'%2F%3E%3C%2Fsvg%3E");
+    background-size: 1.125rem 1.75rem;
+  }
+
+  .swiper-button-next {
+    right: -0.5rem;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23626262'%2F%3E%3C%2Fsvg%3E");
+    background-size: 1.125rem 1.75rem;
+  }
+
+  .card {
+    position: relative;
+    border: none;
+    background-color: transparent;
+  }
+
+  .card-image {
+    width: 7rem;
+    height: 7rem;
+    margin-right: auto;
+    margin-bottom: 0.25rem;
+    margin-left: auto;
+    border-radius: 50%;
+  }
+
+  .card-body {
+    padding-bottom: 0;
+  }
+
+  .testimonial-author {
+    margin-bottom: 0;
+  }
+}
+
+/***********************/
+/*     07. Register    */
+/***********************/
+.form-1 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  .list-unstyled {
+    margin-top: 1.375rem;
+
+    .fas {
+      color: $turquoise;
+      line-height: 1.375rem;
+    }
+  }
+}
+
+/***********************/
+/*     08. Contact     */
+/***********************/
+.form-2 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background: url("../images/header-background.jpg") no-repeat;
+  background-position: 8rem;
+  background-size: cover;
+}
+
+/**********************/
+/*     09. Footer     */
+/**********************/
+.copyright a {
+  text-decoration: none;
+}
+
+/**********************/
+/*   10. Text pages   */
+/**********************/
+// (about, legals, ...)
+.textpage-top {
+	padding-top: 10rem;
+	padding-bottom: 5rem;
+}
+
+/**********************************/
+/*     11. Back To Top Button     */
+/**********************************/
+a.back-to-top {
+  position: fixed;
+  z-index: 999;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 1.8rem;
+  background: $turquoise url("../images/up-arrow.png") no-repeat center 47%;
+  background-size: 1rem 1rem;
+  text-indent: -9999px;
+}
+
+a:hover.back-to-top {
+  background-color: $turquoise-dark;
+  transition: all 0.3s;
+}
+
+/*****************************/
+/*     12. Media Queries     */
+/*****************************/
+/* Min-width width 768px ("md") */
+@media (min-width: 768px) {
+  /* Top */
+  .top .top-content {
+    padding-top: 10.5rem;
+  }
+
+  .top h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  /* Testimonials */
+  .slider {
+    .slider-container {
+      width: 70%;
+    }
+
+    .swiper-container {
+      width: 85%;
+    }
+
+    .swiper-button-prev {
+      left: 1rem;
+      width: 1.375rem;
+      background-size: 1.375rem 2.125rem;
+    }
+
+    .swiper-button-next {
+      right: 1rem;
+      width: 1.375rem;
+      background-size: 1.375rem 2.125rem;
+    }
+  }
+}
+
+/* Min-width width 992px ("lg") */
+@media (min-width: 992px) {
+  /* Navigation */
+  .navbar-custom {
+    padding: 2.125rem 1.5rem 2.125rem 2rem;
+    box-shadow: none;
+    background: transparent;
+
+    .navbar-nav {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .nav-item .nav-link {
+      padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+      color: $white;
+      opacity: 0.8;
+    }
+
+    .nav-item .nav-link:hover,
+    .nav-item .nav-link.active {
+      color: $white;
+      opacity: 1;
+    }
+
+    &.top-nav-collapse {
+      padding: 0.5rem 1.5rem 0.5rem 2rem;
+      box-shadow: 0 0.0625rem 0.375rem 0 $black-shadow;
+      background-color: $white;
+    }
+
+    &.top-nav-collapse .nav-item .nav-link {
+      color: $gray-dark-3;
+      opacity: 1;
+    }
+
+    &.top-nav-collapse .nav-item .nav-link:hover,
+    &.top-nav-collapse .nav-item .nav-link.active {
+      color: $turquoise;
+    }
+
+    .dropdown-menu {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      border-radius: 0.25rem;
+    }
+
+    &.top-nav-collapse .dropdown-menu {
+      box-shadow: 0 0.375rem 0.375rem 0 $black-shadow;
+    }
+  }
+
+  /* Top */
+  .top {
+    background: url("../images/header-background.jpg") center center no-repeat;
+    background-size: cover;
+    .top-content {
+      padding-top: 11.5rem;
+    }
+  }
+
+  /* Services */
+  .cards-1 .card {
+    display: inline-block;
+    max-width: 17.125rem;
+    vertical-align: top;
+  }
+
+  /* Register */
+  .form-1 {
+    padding-top: 7.5rem;
+  }
+
+  .form-1 .text-container {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  /* Testimonials */
+  .slider {
+    padding-bottom: 7.5rem;
+
+    .slider-container {
+      width: 88%;
+    }
+
+    .swiper-container {
+      width: 82%;
+    }
+  }
+}
+
+/* Min-width width 1200px ("xl") */
+@media (min-width: 1200px) {
+  /* Navigation */
+  .navbar-custom {
+    padding: 2.125rem 5rem 2.125rem 5rem;
+  }
+
+  .navbar-custom.top-nav-collapse {
+    padding: 0.5rem 5rem 0.5rem 5rem;
+  }
+
+  /* Top */
+  .top .top-content {
+    padding-top: 12.5rem;
+  }
+
+  .top .top-container {
+    margin-top: 5.375rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+
+  .top .image-container {
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+
+  /* Services */
+  .cards-1 .card {
+    max-width: 21rem;
+  }
+
+  /* Register */
+  .form-1 .text-container {
+    margin-right: 1.5rem;
+    margin-left: 6rem;
+  }
+
+  .form-1 form {
+    margin-right: 6rem;
+    margin-left: 1.5rem;
+  }
+
+  /* Testimonials */
+  .slider h2 {
+    margin-top: 3.5rem;
+  }
+
+  /* Contact */
+  .form-2 #contactForm {
+    max-width: 31rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    {{> head}}
+  </head>
+
+  <body class="d-flex flex-column" data-spy="scroll" data-target=".fixed-top">
+    <header>
+      {{#if (eq title 'Accueil')}}
+        {{#> navbar index=true}}
+        {{/navbar}}
+      {{else}}
+        {{#> navbar index=false}}
+        {{/navbar}}
+      {{/if}}
+    </header>
+
+    <main>
+      {{{body}}}
+    </main>
+
+    <footer class="footer mt-auto">
+      {{> footer}}
+    </footer>
+  </body>
+</html>

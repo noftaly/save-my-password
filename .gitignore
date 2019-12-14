@@ -1,0 +1,15 @@
+# Macos
+.DS_Store
+
+# Dependency directories
+node_modules/
+package-lock.json
+
+# Eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+
+# A file where I put old stuff
+legacy/

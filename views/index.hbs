@@ -1,0 +1,308 @@
+{{!< ./layout/main.hbs }}
+
+{{!-- Top --}}
+<div id="top" class="top">
+  <div class="top-content text-left">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-container text-center text-md-left">
+            <h1><span class="turquoise">Save</span> My <span class="turquoise">Password</span></h1>
+            <a class="btn-solid-lg page-scroll" href="#services">DÉCOUVRIR</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="image-container">
+            <img class="img-fluid" src="images/secure.svg" alt="secure drawing" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Services --}}
+<div id="services" class="cards-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="mb-3">Votre gestionnaire de mot de passe, gratuit, simple et sécurisé</h2>
+        <p class="mb-5 p-large">Pourquoi devrait-on payer pour sécuriser ses mots de passe ? Pourquoi cela devrait être
+          compliqué ? Nous pensons que le meilleur gestionnaire de mots de passes doit rester simple et gratuit, mais sécurisé
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img class="card-image mx-auto" src="images/services-icon-secure.svg" alt="secure icon">
+              <div class="card-body p-0">
+                <h4 class="card-title mb-2">Sécurisé</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit fuga quisquam qui omnis ab
+                  doloribus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img class="card-image mx-auto" src="images/services-icon-simple.svg" alt="simple icon">
+              <div class="card-body p-0">
+                <h4 class="card-title mb-2">Simple</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam facilis incidunt inventore!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img class="card-image mx-auto" src="images/services-icon-free.svg" alt="free icon">
+              <div class="card-body p-0">
+                <h4 class="card-title mb-2">Gratuit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, accusamus velit nemo ipsa repellendus
+                  ducimus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Video --}}
+<div id="video" class="video-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="mb-5 text-center">Un petit coup d'oeil ?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="image-container my-lg-auto">
+          <div class="video-wrapper">
+            <a role="button" data-toggle="modal" data-target="#videoModal">
+              <img class="img-fluid" src="images/video-image.svg" alt="video preview">
+              <span class="video-play-button">
+                <span></span>
+              </span>
+            </a>
+            {{!-- The Modal --}}
+            <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3>Un petit coup d'oeil ?</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <iframe 
+                      id="youtubeVideoFrame"
+                      data-youtube-id="y6120QOlsfU"
+                      width="100%"
+                      height="700vh"
+                      frameborder="0"
+                      allow="autoplay"
+                      src=""
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Testimonials --}}
+<div id="testimonials">
+  <div class="slider">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-none d-lg-block ">
+          <div class="image-container mb-lg-0">
+            <img class="img-fluid" src="images/feedback.svg" alt="testimonials drawing">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h2>Écoutez plutôt les avis des utilisateurs</h2>
+          {{!-- Card Slider --}}
+          <div class="slider-container mx-md-auto">
+            <div class="swiper-container card-slider">
+              <div class="swiper-wrapper">
+
+                {{!-- Slide --}}
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img class="card-image" src="images/testimonial-person-1.svg" alt="person">
+                    <div class="card-body">
+                      <p class="testimonial-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci non
+                        nam dolorem dolor ratione inventore veniam culpa perferendis et quidem!.</p>
+                      <p class="testimonial-author">Jude Thorn - Utilisateur de SaveMyPassword</p>
+                    </div>
+                  </div>
+                </div>
+
+                {{!-- Slide --}}
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img class="card-image" src="images/testimonial-person-2.svg" alt="person">
+                    <div class="card-body">
+                      <p class="testimonial-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, cum id!
+                        Exercitationem iste, laudantium at quasi aspernatur eum!</p>
+                      <p class="testimonial-author">Marsha Singer - Utilisateur de SaveMyPassword</p>
+                    </div>
+                  </div>
+                </div>
+
+                {{!-- Slide --}}
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img class="card-image" src="images/testimonial-person-3.svg" alt="person">
+                    <div class="card-body">
+                      <p class="testimonial-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Est perspiciatis voluptatibus illo harum dicta?</p>
+                      <p class="testimonial-author">Roy Smith - Utilisateur de SaveMyPassword</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {{!-- Add Arrows --}}
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Register --}}
+<div id="register" class="form-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-12 order-lg-1">
+        <div class="form-container">
+          <form id="requestForm" data-toggle="validator" data-focus="false">
+            <div class="form-label-group">
+              <input type="text" class="form-control-input" id="rname" placeholder="Nom" name="rname" required>
+              <label for="rname">Nom</label>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-label-group">
+              <input type="text" class="form-control-input" id="rfirstname" placeholder="Prénom" name="rfirstname" required>
+              <label for="rfirstname">Prénom</label>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-label-group">
+              <input type="email" class="form-control-input" id="remail" placeholder="Email" name="remail" required>
+              <label for="remail">Email</label>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-label-group">
+              <input type="text" class="form-control-input" id="rphone" placeholder="Téléphone" name="rphone" required>
+              <label for="rphone">Téléphone</label>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group checkbox">
+              <input type="checkbox" id="rterms" value="Agreed-to-Terms" name="rterms" required>
+              J'ai lu et accepté les <a href="/about/privacy-policy">politique de confidentialité</a> et les
+              <a href="/about/terms-conditions">termes et conditions</a>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="form-control-submit-button">S'ENREGISTRER</button>
+            </div>
+            <div class="form-message">
+              <div id="rmsgSubmit" class="h3 text-center hidden"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6 oreder-1 order-lg-12">
+        <div class="text-lg-left">
+          <h2 class="text-center text-lg-left mb-3">Commencez dès maintenant, gratuitement !</h2>
+          <p>
+            Créez-vous un compte dès maintenant pour vous plonger dans l'expérience "SaveMyPassword" ! Accedez à toutes
+            les fonctionnalités gratuitement, et n'ayez plus peur de vous balader sur le web !
+          </p>
+          <ul class="list-unstyled li-space-lg">
+            <li>
+              <i class="fas fa-check pr-1"></i>
+              <strong class="blue">Gardez votre argent</strong> car SaveMyPassword est entièrement gratuit
+            </li>
+            <li>
+              <i class="fas fa-check pr-1"></i>
+              <strong class="blue">Simplifiez-vous la vie</strong> en gardant tous vos mots de passes, sécurisés,
+                à un endroit, et souvenez-vous plus que d'un seul.
+            </li>
+            <li>
+              <i class="fas fa-check pr-1"></i>
+              <strong class="blue">Économisez du temps</strong> sans vous soucier de vos mots de passe
+            </li>
+            <li>
+              <i class="fas fa-check pr-1"></i>
+              <strong class="blue">Connectez-vous dès maintenant</strong> en 1 minute, et gratuitement
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Contact --}}
+<div id="contact" class="form-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="text-center mb-3">Nous contacter</h2>
+        <p class="address text-center">
+          N'hesitez pas à nous envoyer un mail, à <a class="turquoise" href="mailto:elliot.maisl@gmail.com">
+          elliot.maisl@gmail.com</a>, ou remplissez le formulaire ci-dessous :
+        </p>
+        {{!-- Contact Form --}}
+        <form id="contactForm" data-toggle="validator" data-focus="false">
+          <div class="form-label-group">
+            <input type="text" class="form-control-input" placeholder="Nom" id="cname" required>
+            <label for="cname">Nom</label>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-label-group">
+            <input type="email" class="form-control-input" placeholder="Email" id="cemail" required>
+            <label for="cemail">Email</label>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-label-group">
+            <textarea class="form-control-textarea" placeholder="Votre message" id="cmessage" required></textarea>
+            <label for="cmessage">Votre message</label>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group checkbox">
+            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>J'ai lu et accepté les
+            <a href="/about/privacy-policy">politique de confidentialité</a> et les <a href="/about/terms-conditions">termes et conditions</a>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="form-control-submit-button">ENVOYER LE MESSAGE</button>
+          </div>
+          <div class="form-message">
+            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <img class="img-fluid img-flip" src="images/contact.svg" alt="Contact">
+        </div>
+    </div>
+  </div>
+</div>
