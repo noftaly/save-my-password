@@ -27,3 +27,8 @@
 
 {{!-- Favicon  --}}
 <link rel="icon" href="images/favicon.png">
+
+{{!-- Pages specific content --}}
+{{#if (or (eq page 'login') (eq page 'register'))}}
+  <link rel="stylesheet" href="/css/auth.css">
+{{/if}}

@@ -1,0 +1,9 @@
+.auth {
+  height: 50rem;
+  background: url("../images/header-background.jpg") center center no-repeat;
+  background-size: cover; }
+  .auth .container {
+    padding-top: 30vh; }
+  .auth .card {
+    border-radius: 20px;
+    border-color: transparent; }

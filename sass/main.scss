@@ -256,6 +256,12 @@ input[type="checkbox"] {
     transition: all 0.2s ease;
   }
 
+  .nav-highlight {
+    padding: 5px;
+    border: 3px $gray-light-1;
+    border-radius: 3px;
+  }
+
   .nav-item .nav-link:hover,
   .nav-item .nav-link.active {
     color: $turquoise;
@@ -540,7 +546,7 @@ input[type="checkbox"] {
 /***********************/
 /*     07. Register    */
 /***********************/
-.form-1 {
+.register-container {
   padding-top: 10rem;
   padding-bottom: 10rem;
 
@@ -608,6 +614,11 @@ a:hover.back-to-top {
 /*****************************/
 /* Min-width width 768px ("md") */
 @media (min-width: 768px) {
+  /* General */
+  .w-md-75 {
+    width: 75% !important;
+  }
+
   /* Top */
   .top .top-content {
     padding-top: 10.5rem;
@@ -710,16 +721,6 @@ a:hover.back-to-top {
     vertical-align: top;
   }
 
-  /* Register */
-  .form-1 {
-    padding-top: 7.5rem;
-  }
-
-  .form-1 .text-container {
-    margin-top: 1.5rem;
-    margin-bottom: 0;
-  }
-
   /* Testimonials */
   .slider {
     padding-bottom: 7.5rem;
@@ -764,17 +765,6 @@ a:hover.back-to-top {
   /* Services */
   .cards-1 .card {
     max-width: 21rem;
-  }
-
-  /* Register */
-  .form-1 .text-container {
-    margin-right: 1.5rem;
-    margin-left: 6rem;
-  }
-
-  .form-1 form {
-    margin-right: 6rem;
-    margin-left: 1.5rem;
   }
 
   /* Testimonials */

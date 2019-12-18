@@ -5,20 +5,30 @@ import compression from 'compression';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
+import passport from 'passport';
+import flash from 'connect-flash';
 import mongoose from 'mongoose';
+import connectMongo from 'connect-mongo';
 import hbs from 'express-hbs';
 import morgan from 'morgan';
 
-require('dotenv').config();
-const MongoStore = require('connect-mongo')(session);
+import * as indexController from './controllers/indexController';
+import * as aboutController from './controllers/aboutController';
+import * as authController from './controllers/authController';
+import * as dashboardController from './controllers/dashboardController';
+import { ensureAuthenticated, forwardAuthenticated } from './config/auth';
 
-import routes from './routes/router';
+require('dotenv').config();
+require('./config/passport').config();
+
+const MongoStore = connectMongo(session);
 
 const app = express();
 const port = Number(process.env.PORT) || 8000;
 process.env.HOST = process.env.HOST || `http://localhost:${port}`;
 const host = process.env.HOST;
 
+// Setting up mongoose
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useNewUrlParser', true);
@@ -30,15 +40,16 @@ mongoose.connection.on('error', (err) => {
   process.exit();
 });
 
+// Setting up Handlebars
 hbs.registerHelper({
-  eq(v1, v2) { return v1 === v2; },
-  ne(v1, v2) { return v1 !== v2; },
-  lt(v1, v2) { return v1 < v2; },
-  gt(v1, v2) { return v1 > v2; },
-  lte(v1, v2) { return v1 <= v2; },
-  gte(v1, v2) { return v1 >= v2; },
-  and(...args) { return Array.prototype.slice.call(args).every(Boolean); },
-  or(...args) { return Array.prototype.slice.call(args, 0, -1).some(Boolean); },
+  eq: (v1, v2) => v1 === v2,
+  ne: (v1, v2) => v1 !== v2,
+  lt: (v1, v2) => v1 < v2,
+  gt: (v1, v2) => v1 > v2,
+  lte: (v1, v2) => v1 <= v2,
+  gte: (v1, v2) => v1 >= v2,
+  and: (...args) => Array.prototype.slice.call(args).every(Boolean),
+  or: (...args) => Array.prototype.slice.call(args, 0, -1).some(Boolean),
 });
 app.engine('hbs', hbs.express4({
   partialsDir: path.join(__dirname, '/views/partials'),
@@ -46,6 +57,7 @@ app.engine('hbs', hbs.express4({
   layoutsDir: path.join(__dirname, '/views/layout'),
 }));
 app.set('view engine', 'hbs');
+// Setting up the expres app
 app.set('views', path.join(__dirname, '/views'));
 app.set('trust proxy', 1);
 app.use(express.static(path.join(__dirname, 'public/')));
@@ -61,19 +73,37 @@ app.use(session({
   cookie: {
     path: '/',
     httpOnly: true,
-    maxAge: 90 * 24 * 3600 * 1000,
+    maxAge: 90 * 24 * 3600 * 1000, // 3 months
   },
   store: new MongoStore({
     url: process.env.MONGODB_URI,
     autoReconnect: true,
   }),
 }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 app.use(morgan('dev'));
 app.disable('x-powered-by');
 
-app.get('/', routes.index);
-app.get('/about', routes.about);
-app.get('/about/legals', routes.legals);
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  return next();
+});
+
+app.get('/', indexController.getIndex);
+app.get('/about', aboutController.getAbout);
+app.get('/about/legals', aboutController.getLegals);
+
+app.get('/login', forwardAuthenticated, authController.getLogin);
+app.post('/login', forwardAuthenticated, authController.postLogin);
+app.get('/register', forwardAuthenticated, authController.getRegister);
+app.post('/register', forwardAuthenticated, authController.postRegister);
+app.get('/logout', authController.getLogout);
+
+app.get('/dashboard', ensureAuthenticated, dashboardController.getDashboard);
 
 app.listen(port, () => {
   console.log('App is running at %s in %s mode', host, app.get('env'));

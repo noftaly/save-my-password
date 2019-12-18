@@ -6,6 +6,7 @@
 
   <body class="d-flex flex-column" data-spy="scroll" data-target=".fixed-top">
     <header>
+      {{!-- Puts the right navbar (the 'index' navbar has more menus) --}}
       {{#if (eq title 'Accueil')}}
         {{#> navbar index=true}}
         {{/navbar}}

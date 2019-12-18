@@ -1,0 +1,86 @@
+{{!< ./layout/main.hbs }}
+
+{{!-- Content --}}
+<div id="login" class="auth login mb-4">
+  <div class="container">
+    <div class="card card-auth shadow p-3">
+      <div class="card-body">
+        <h3 class="card-title text-center pb-5">Inscription</h3>
+        {{> messages }}
+        <form action="/register" method="POST" class="form-login">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="inputName"
+                  class="form-control"
+                  placeholder="Nom de famille"
+                  name="name"
+                  value="{{ name }}"
+                  required
+                  autofocus>
+                <label for="inputName">Nom de famille</label>
+              </div>
+
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="inputFirstname"
+                  class="form-control"
+                  placeholder="Prénom"
+                  name="firstname"
+                  value="{{ firstname }}"
+                  required>
+                <label for="inputFirstname">Prénom</label>
+              </div>
+
+              <div class="form-label-group">
+                <input
+                  type="username"
+                  id="inputUsername"
+                  class="form-control"
+                  placeholder="Nom d'utilisateur"
+                  name="username"
+                  value="{{ username }}"
+                  required>
+                <label for="inputUsername">Nom d'utilisateur</label>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-label-group">
+                <input
+                  type="email"
+                  id="inputEmail"
+                  class="form-control"
+                  placeholder="Addresse email"
+                  name="email"
+                  value="{{ email }}"
+                  required>
+                <label for="inputEmail">Addresse email</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword1" class="form-control" placeholder="Mot de passe" name="password" required>
+                <label for="inputPassword1">Mot de passe</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword2" class="form-control" placeholder="Mot de passe" name="passwordConfirm" required>
+                <label for="inputPassword2">Mot de passe</label>
+              </div>
+            </div>
+          </div>
+          <button class="form-control-submit-button w-100 mt-2" type="submit">INSCRIPTION</button>
+          <hr class="mt-4">
+          <div class="text-center">
+            <a href="/login" class="text-decoration-none">
+              Vous avez déjà un compte ? Connectez-vous
+              <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

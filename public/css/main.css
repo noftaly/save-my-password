@@ -216,6 +216,10 @@ input[type="checkbox"] {
     color: #393939;
     text-decoration: none;
     transition: all 0.2s ease; }
+  .navbar-custom .nav-highlight {
+    padding: 5px;
+    border: 3px #c4d8dc;
+    border-radius: 3px; }
   .navbar-custom .nav-item .nav-link:hover,
   .navbar-custom .nav-item .nav-link.active {
     color: #00bfd8; }
@@ -427,12 +431,12 @@ input[type="checkbox"] {
 /***********************/
 /*     07. Register    */
 /***********************/
-.form-1 {
+.register-container {
   padding-top: 10rem;
   padding-bottom: 10rem; }
-  .form-1 .list-unstyled {
+  .register-container .list-unstyled {
     margin-top: 1.375rem; }
-    .form-1 .list-unstyled .fas {
+    .register-container .list-unstyled .fas {
       color: #00bfd8;
       line-height: 1.375rem; }
 
@@ -484,6 +488,9 @@ a:hover.back-to-top {
 /*****************************/
 /* Min-width width 768px ("md") */
 @media (min-width: 768px) {
+  /* General */
+  .w-md-75 {
+    width: 75% !important; }
   /* Top */
   .top .top-content {
     padding-top: 10.5rem; }
@@ -549,12 +556,6 @@ a:hover.back-to-top {
     display: inline-block;
     max-width: 17.125rem;
     vertical-align: top; }
-  /* Register */
-  .form-1 {
-    padding-top: 7.5rem; }
-  .form-1 .text-container {
-    margin-top: 1.5rem;
-    margin-bottom: 0; }
   /* Testimonials */
   .slider {
     padding-bottom: 7.5rem; }
@@ -583,13 +584,6 @@ a:hover.back-to-top {
   /* Services */
   .cards-1 .card {
     max-width: 21rem; }
-  /* Register */
-  .form-1 .text-container {
-    margin-right: 1.5rem;
-    margin-left: 6rem; }
-  .form-1 form {
-    margin-right: 6rem;
-    margin-left: 1.5rem; }
   /* Testimonials */
   .slider h2 {
     margin-top: 3.5rem; }
