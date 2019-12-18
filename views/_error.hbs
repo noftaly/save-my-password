@@ -1,0 +1,26 @@
+{{!< ./layout/main.hbs }}
+
+{{!-- Top --}}
+<div id="top" class="top textpage-top">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Erreur {{ code }}...</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Content --}}
+<div class="mt-5">
+  <div class="container">
+    <div class="alert alert-warning">
+      <strong>Oupsss...</strong>
+      <p>{{ message }}</p>
+    </div>
+
+    <div class="text-center">
+      <a href="/">Revenir à l'accueil</a>
+    </div>
+  </div>
+</div>

@@ -105,6 +105,12 @@ app.get('/logout', authController.getLogout);
 
 app.get('/dashboard', ensureAuthenticated, dashboardController.getDashboard);
 
+app.get('*', (req, res) => {
+  res.locals.code = 404;
+  res.locals.message = "Désolé, mais cette page n'existe pas ou n'existe plus.";
+  res.render('_error', { title: 'Erreur', page: 'error' });
+});
+
 app.listen(port, () => {
   console.log('App is running at %s in %s mode', host, app.get('env'));
 });
