@@ -26,6 +26,7 @@ export function config() {
 
   passport.deserializeUser((id, done) => {
     User.findById(id, (err, user) => {
+      // TODO: remove password field from user object here.
       done(err, user);
     });
   });
