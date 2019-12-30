@@ -1,0 +1,23 @@
+{
+  "name": "Save My Password",
+  "short_name": "SaveMyPwd",
+  "description": "Un gestionnaire de mot de passes simple, sécurisé et gratuit.",
+  "lang": "fr",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#FFFFFF",
+  "theme_color": "#00bfd8",
+  "icons": [{
+    "src": "./images/logo/logo_icon.png",
+    "sizes": "114x114"
+  }, {
+    "src": "./images/logo/logo_inline.png",
+    "sizes": "190x69"
+  }, {
+    "src": "./images/logo/logo.png",
+    "sizes": "108x114"
+  }, {
+    "src": "./images/favicon.png",
+    "sizes": "16x16"
+  }]
+}
