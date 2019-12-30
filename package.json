@@ -1,7 +1,7 @@
 {
   "name": "save-my-password",
   "version": "0.1.0",
-  "description": "A simple yet secured password manager",
+  "description": "A simple yet secured free password manager",
   "main": "app.js",
   "private": false,
   "scripts": {
