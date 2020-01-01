@@ -1,9 +1,9 @@
 // Please, free me from jquery ;(
 
 // Collapse navbar when scrolling the page
-window.onscroll = () => (window.scrollY > 80
+window.addEventListener('scroll', () => (window.scrollY > 80
   ? document.getElementById('navbar').classList.add('top-nav-collapse')
-  : document.getElementById('navbar').classList.remove('top-nav-collapse'));
+  : document.getElementById('navbar').classList.remove('top-nav-collapse')));
 
 // Smooth scrolling (requires jQuery Easing plugin)
 $(document).on('click', 'a.page-scroll', function () {
@@ -13,9 +13,9 @@ $(document).on('click', 'a.page-scroll', function () {
 
 // Closes the responsive menu on menu item click
 for (const link of document.querySelectorAll('.nav-link')) {
-  link.onclick = function () {
+  link.addEventListener('click', () => {
     if (link.id !== 'navbarDropdown') $('.navbar-collapse').collapse('hide');
-  };
+  });
 }
 
 // eslint-disable-next-line no-unused-vars, no-undef
@@ -43,6 +43,6 @@ $('#videoModal').on('hide.bs.modal', () => {
 
 // Create the "back to top" button
 $('body').prepend('<a href="#top" class="back-to-top page-scroll">Haut de page</a>');
-document.onscroll = () => (window.scrollY > 700
+document.addEventListener('scroll', () => (window.scrollY > 700
   ? $('a.back-to-top').fadeIn(500)
-  : $('a.back-to-top').fadeOut(500));
+  : $('a.back-to-top').fadeOut(500)));

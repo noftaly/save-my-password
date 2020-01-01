@@ -1,29 +1,31 @@
 import path from 'path';
-import express from 'express';
+
 import bodyParser from 'body-parser';
 import compression from 'compression';
-import helmet from 'helmet';
-import cookieParser from 'cookie-parser';
-import session from 'express-session';
-import passport from 'passport';
 import flash from 'connect-flash';
-import mongoose from 'mongoose';
 import connectMongo from 'connect-mongo';
+import cookieParser from 'cookie-parser';
+import { config as dotenvConfig } from 'dotenv';
+import express from 'express';
 import hbs from 'express-hbs';
+import session from 'express-session';
 import helpers from 'handlebars-helpers';
+import helmet from 'helmet';
+import mongoose from 'mongoose';
 import morgan from 'morgan';
+import passport from 'passport';
 
-import * as indexController from './controllers/indexController';
+import { ensureAuthenticated, forwardAuthenticated } from './config/auth';
+import passportConfig from './config/passport';
 import * as aboutController from './controllers/aboutController';
 import * as authController from './controllers/authController';
 import * as dashboardController from './controllers/dashboardController';
-import { ensureAuthenticated, forwardAuthenticated } from './config/auth';
+import * as indexController from './controllers/indexController';
 
-require('dotenv').config();
-require('./config/passport').config();
+dotenvConfig();
+passportConfig();
 
 const MongoStore = connectMongo(session);
-
 const app = express();
 const port = Number(process.env.PORT) || 8000;
 process.env.HOST = process.env.HOST || `http://localhost:${port}`;
