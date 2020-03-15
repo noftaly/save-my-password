@@ -306,8 +306,7 @@ input[type="checkbox"] {
     padding: 3.25rem 2rem 2rem 2rem;
     border: 1px solid #c4d8dc;
     border-radius: 0.5rem;
-    background: transparent;
-    transition: all 0.3s ease-in-out; }
+    background: transparent; }
   .cards-1 .card-image {
     width: 6rem;
     height: 6rem;
