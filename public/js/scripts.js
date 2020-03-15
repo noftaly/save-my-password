@@ -5,11 +5,13 @@ window.addEventListener('scroll', () => (window.scrollY > 80
   ? document.getElementById('navbar').classList.add('top-nav-collapse')
   : document.getElementById('navbar').classList.remove('top-nav-collapse')));
 
-// Smooth scrolling (requires jQuery Easing plugin)
-$(document).on('click', 'a.page-scroll', function () {
-  const scrollTop = $($(this).attr('href')).offset().top;
-  $('html, body').stop().animate({ scrollTop }, 600, 'easeInOutExpo');
-});
+// Smooth scrolling
+for (const scroller of document.querySelectorAll('a.page-scroll')) {
+  scroller.addEventListener('click', function () {
+    const scrollTop = $(this.getAttribute('href')).offset().top;
+    $('html, body').stop().animate({ scrollTop }, 600, 'easeInOutExpo');
+  });
+}
 
 // Closes the responsive menu on menu item click
 for (const link of document.querySelectorAll('.nav-link')) {
