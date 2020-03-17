@@ -6,7 +6,7 @@
   "private": false,
   "scripts": {
     "start": "concurrently \"npm run watch:js\" \"npm run watch:sass\"",
-    "watch:js": "nodemon --exec babel-node app.js",
+    "watch:js": "nodemon --ignore 'public/' --exec babel-node app.js",
     "watch:sass": "node-sass -w sass/ -o public/css/ -r",
     "build:sass": "node-sass sass/ -o public/css/ -r",
     "lint": "eslint .",
