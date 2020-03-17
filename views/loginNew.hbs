@@ -1,0 +1,48 @@
+{{!< main.hbs }}
+
+{{!-- Content --}}
+<div id="login" class="auth login">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-auth shadow p-3">
+          <div class="card-body">
+            <h3 class="card-title text-center pb-5">Connection</h3>
+            {{> messages }}
+            <form action="/login" method="POST" class="form-login">
+              <div class="form-label-group">
+                <input
+                  type="email"
+                  id="inputEmail"
+                  class="form-control"
+                  placeholder="Addresse email"
+                  name="email"
+                  value="{{ email }}"
+                  required>
+                <label for="inputEmail">Addresse email</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="number" id="inputCode" class="form-control" placeholder="Code de vérification" name="code" required autofocus>
+                <label for="inputCode">Code de vérification</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" name="password" required>
+                <label for="inputPassword">Mot de passe</label>
+              </div>
+              <button class="form-control-submit-button w-100" type="submit">CONNECTION</button>
+              <hr class="mt-4">
+              <div class="text-center">
+                <a href="/register" class="text-decoration-none">
+                  Pas encore de compte ? Enregistrez-vous
+                  <i class="fas fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

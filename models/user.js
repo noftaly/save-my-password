@@ -6,7 +6,7 @@ const ROLE_ADMIN = 10;
 
 const UserSchema = new mongoose.Schema({
   email: { type: String, unique: true },
-  emailVerificationToken: String,
+  emailVerificationCode: String,
   emailVerified: Boolean,
 
   password: String,

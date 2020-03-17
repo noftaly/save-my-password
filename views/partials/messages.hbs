@@ -2,7 +2,7 @@
   <div class="alert alert-danger" role="alert">
     <strong>Problème(s) :</strong>
     {{#each errors}}
-      <br />- {{ this.msg }}
+      <br />- {{{ this.msg }}}
     {{/each}}
   </div>
 {{/if}}
@@ -10,21 +10,21 @@
 {{#if error_msg}}
   <div class="alert alert-danger" role="alert">
     <strong>Erreur :</strong>
-    {{ error_msg }}
+    {{{ error_msg }}}
   </div>
 {{/if}}
 
 {{#if error}}
   <div class="alert alert-danger" role="alert">
     <strong>Erreur :</strong>
-    {{ error }}
+    {{{ error }}}
   </div>
 {{/if}}
 
 {{#if success_msg}}
   <div class="alert alert-success" role="alert">
     <strong>Succès !</strong>
-    {{ success_msg }}
+    {{{ success_msg }}}
   </div>
 {{/if}}
 

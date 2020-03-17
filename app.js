@@ -13,6 +13,7 @@ import helpers from 'handlebars-helpers';
 import helmet from 'helmet';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
+import nodemailer from 'nodemailer';
 import passport from 'passport';
 
 import { ensureAuthenticated, forwardAuthenticated } from './config/auth';
@@ -30,6 +31,17 @@ const app = express();
 const port = Number(process.env.PORT) || 8000;
 process.env.HOST = process.env.HOST || `http://localhost:${port}`;
 const host = process.env.HOST;
+
+// eslint-disable-next-line import/prefer-default-export
+export const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.SMTP_EMAIL,
+    pass: process.env.SMTP_PASSWORD,
+  },
+});
 
 // Setting up mongoose
 mongoose.set('useFindAndModify', false);
@@ -96,11 +108,13 @@ app.get('/about/legals', aboutController.getLegals);
 
 app.get('/login', forwardAuthenticated, authController.getLogin);
 app.post('/login', forwardAuthenticated, authController.postLogin);
+app.get('/login/new', forwardAuthenticated, authController.getLoginNew);
+app.post('/login/new', forwardAuthenticated, authController.postLoginNew);
 app.get('/register', forwardAuthenticated, authController.getRegister);
 app.post('/register', forwardAuthenticated, authController.postRegister);
 app.get('/logout', authController.getLogout);
 
-app.get('/dashboard/', ensureAuthenticated, dashboardController.getDashboardIndex);
+app.get('/dashboard', ensureAuthenticated, dashboardController.getDashboardIndex);
 app.get('/dashboard/passwords', ensureAuthenticated, dashboardController.getDashboardPasswords);
 app.get('/dashboard/generator', ensureAuthenticated, dashboardController.getDashboardGenerator);
 app.get('/dashboard/account', ensureAuthenticated, dashboardController.getDashboardAccount);
