@@ -8,11 +8,9 @@
     <header>
       {{!-- Puts the right navbar (the 'index' navbar has more menus) --}}
       {{#if (eq title 'Accueil')}}
-        {{#> navbar index=true}}
-        {{/navbar}}
+        {{> navbar index=true}}
       {{else}}
-        {{#> navbar index=false}}
-        {{/navbar}}
+        {{> navbar index=false}}
       {{/if}}
     </header>
 
@@ -21,7 +19,7 @@
     </main>
 
     <footer class="footer mt-auto">
-      {{> footer}}
+      {{> footer template=true}}
     </footer>
   </body>
 </html>

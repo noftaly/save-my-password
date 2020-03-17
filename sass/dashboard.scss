@@ -1,0 +1,109 @@
+@import './colors.scss';
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+@mixin color-light {
+  color: $gray-dark-3;
+}
+
+.bg-dark-blue {
+  background-color: $turquoise;
+  background-image: linear-gradient(180deg, $turquoise 10%, $turquoise-darker 100%);
+  background-size: cover;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  .sidebar-item-text-minimized { display: none; }
+
+  &.minimized {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    .sidebar-item-text { display: none; }
+    .sidebar-item-text-minimized { display: block; }
+    .sidebar-items {
+      width: 3rem;
+      .fas { padding-right: 0; }
+    }
+    .sidebar-item { text-align: center; }
+    i:not(.no-grow) { font-size: 1.5rem; }
+  }
+
+  .sidebar-items {
+    margin: 0rem !important;
+    width: 15rem;
+    height: 80vh;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+  }
+
+  .sidebar-heading {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    font-size: 1.2rem;
+  }
+
+  .sidebar-hr {
+    background-color: $gray-dark-1;
+  }
+
+  .sidebar-item {
+    display: block;
+    outline: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    @include color-light;
+
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+
+    i.fas {
+      padding-right: 2rem;
+    }
+  }
+
+  .sidebar-item:hover {
+    color: $white;
+    text-decoration: none;
+  }
+
+  .sidebar-toggler {
+    background-color: #ffffff77;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    outline: none;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+#page-content-wrapper {
+  width: 100vw;
+}
+
+#inner-content-wrapper {
+  height: 80vh;
+}

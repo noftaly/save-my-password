@@ -39,7 +39,7 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('error', (err) => {
   console.error(err);
-  console.log('%s MongoDB connection error. Please make sure MongoDB is running.');
+  console.log('MongoDB connection error. Please make sure MongoDB is running.');
   process.exit();
 });
 
@@ -47,8 +47,8 @@ mongoose.connection.on('error', (err) => {
 hbs.registerHelper(helpers.comparison());
 app.engine('hbs', hbs.express4({
   partialsDir: path.join(__dirname, '/views/partials'),
-  defaultLayout: path.join(__dirname, '/views/layout/main.hbs'),
-  layoutsDir: path.join(__dirname, '/views/layout'),
+  defaultLayout: path.join(__dirname, '/views/layouts/main.hbs'),
+  layoutsDir: path.join(__dirname, '/views/layouts'),
 }));
 app.set('view engine', 'hbs');
 // Setting up the expres app
@@ -100,12 +100,15 @@ app.get('/register', forwardAuthenticated, authController.getRegister);
 app.post('/register', forwardAuthenticated, authController.postRegister);
 app.get('/logout', authController.getLogout);
 
-app.get('/dashboard', ensureAuthenticated, dashboardController.getDashboard);
+app.get('/dashboard/', ensureAuthenticated, dashboardController.getDashboardIndex);
+app.get('/dashboard/passwords', ensureAuthenticated, dashboardController.getDashboardPasswords);
+app.get('/dashboard/generator', ensureAuthenticated, dashboardController.getDashboardGenerator);
+app.get('/dashboard/account', ensureAuthenticated, dashboardController.getDashboardAccount);
 
-app.get('*', (req, res) => {
+app.get('*', (_req, res) => {
   res.locals.code = 404;
   res.locals.message = "Désolé, mais cette page n'existe pas ou n'existe plus.";
-  res.render('_error', { title: 'Erreur', page: 'error' });
+  res.render('error', { title: 'Erreur', page: 'error' });
 });
 
 app.listen(port, () => {

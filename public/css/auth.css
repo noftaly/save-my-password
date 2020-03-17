@@ -7,3 +7,12 @@
   .auth .card {
     border-radius: 20px;
     border-color: transparent; }
+
+.register-container {
+  padding-top: 10rem;
+  padding-bottom: 10rem; }
+  .register-container .list-unstyled {
+    margin-top: 1.375rem; }
+    .register-container .list-unstyled .fas {
+      color: #00bfd8;
+      line-height: 1.375rem; }

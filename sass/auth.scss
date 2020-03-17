@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .auth {
   height: 50rem;
   background: url("../images/header-background.jpg") center center no-repeat;
@@ -10,5 +12,19 @@
   .card {
     border-radius: 20px;
     border-color: transparent;
+  }
+}
+
+.register-container {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  .list-unstyled {
+    margin-top: 1.375rem;
+
+    .fas {
+      color: $turquoise;
+      line-height: 1.375rem;
+    }
   }
 }

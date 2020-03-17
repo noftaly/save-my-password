@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    {{> dashboard/head}}
+  </head>
+
+  <body>
+    <header>
+    </header>
+
+    <main class="d-flex" id="wrapper">
+      {{> dashboard/sidebar}}
+
+      <div id="page-content-wrapper">
+        {{> dashboard/nav}}
+
+        {{{body}}}
+
+        <footer class="footer mt-auto">
+          {{> footer}}
+        </footer>
+      </div>
+    </main>
+
+  </body>
+</html>
