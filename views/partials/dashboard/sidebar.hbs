@@ -1,5 +1,5 @@
 <div class="bg-dark-blue shadow" id="sidebar-wrapper">
-  <div class="sidebar-heading font-weight-bold text-center black pt-4">
+  <div class="sidebar-heading font-weight-bold text-center text-white pt-4">
     <span class="sidebar-item-text text-nowrap">Save My Password</span>
     <span class="sidebar-item-text-minimized text-nowrap">SMP</span>
   </div>
@@ -8,19 +8,19 @@
 
   <ul class="sidebar-items">
     <li>
-      <a href="/dashboard/" class="sidebar-item">
+      <a href="/dashboard/" class="sidebar-item {{#if (eq page 'dashboard-index')}} active {{/if}}">
         <i class="fas fa-tachometer-alt fa-fw"></i>
         <span class="sidebar-item-text">Dashboard</span>
       </a>
     </li>
     <li>
-      <a href="/dashboard/passwords" class="sidebar-item">
+      <a href="/dashboard/passwords" class="sidebar-item {{#if (eq page 'dashboard-passwords')}} active {{/if}}">
         <i class="fas fa-key fa-fw"></i>
         <span class="sidebar-item-text">Mots de passe</span>
       </a>
     </li>
     <li>
-      <a href="/dashboard/generator" class="sidebar-item">
+      <a href="/dashboard/generator" class="sidebar-item {{#if (eq page 'dashboard-generator')}} active {{/if}}">
         <i class="fas fa-plus fa-fw"></i>
         <span class="sidebar-item-text">Générateur de MdP</span>
       </a>
@@ -29,7 +29,7 @@
     <hr class="sidebar-hr">
 
     <li>
-      <a href="/dashboard/account" class="sidebar-item">
+      <a href="/dashboard/account" class="sidebar-item {{#if (eq page 'dashboard-account')}} active {{/if}}">
         <i class="fas fa-user fa-fw"></i>
         <span class="sidebar-item-text">Mon Compte</span>
       </a>
