@@ -4,23 +4,26 @@ body {
 a {
   text-decoration: none !important; }
 
+/**************************/
+/*         Sidebar        */
+/**************************/
 .bg-dark-blue {
-  background-color: #00bfd8;
-  background-image: linear-gradient(180deg, #00bfd8 10%, #1191a2 100%);
+  background-color: #1a63d2;
+  background-image: linear-gradient(180deg, #1a63d2 10%, #043d7b 100%);
   background-size: cover; }
 
 #sidebar-wrapper {
   min-height: 100vh;
   padding-left: 1.5rem;
   padding-right: 1.5rem; }
-  #sidebar-wrapper .sidebar-item-text-minimized {
+  #sidebar-wrapper .sidebar-show-min {
     display: none; }
   #sidebar-wrapper.minimized {
     padding-left: 1rem;
     padding-right: 1rem; }
-    #sidebar-wrapper.minimized .sidebar-item-text {
+    #sidebar-wrapper.minimized .sidebar-show-max {
       display: none; }
-    #sidebar-wrapper.minimized .sidebar-item-text-minimized {
+    #sidebar-wrapper.minimized .sidebar-show-min {
       display: block; }
     #sidebar-wrapper.minimized .sidebar-items {
       width: 3rem; }
@@ -33,7 +36,8 @@ a {
   #sidebar-wrapper .sidebar-items {
     margin: 0rem !important;
     width: 15rem;
-    height: 80vh;
+    height: 80vh; }
+  #sidebar-wrapper.minimizing .sidebar-items {
     -webkit-transition: all .25s ease-out;
     -moz-transition: all .25s ease-out;
     -o-transition: all .25s ease-out;
@@ -43,7 +47,7 @@ a {
     padding-bottom: 0.875rem;
     font-size: 1.2rem; }
   #sidebar-wrapper .sidebar-hr {
-    background-color: #626262; }
+    background-color: #c4d8dc; }
   #sidebar-wrapper .sidebar-item {
     display: block;
     outline: 0;
@@ -51,13 +55,16 @@ a {
     padding-bottom: 0.75rem;
     font-size: 1rem;
     white-space: nowrap;
-    color: #393939;
+    color: #c4d8dc;
     -webkit-transition: color .2s ease-in-out;
     -moz-transition: color .2s ease-in-out;
     -o-transition: color .2s ease-in-out;
     transition: color .2s ease-in-out; }
     #sidebar-wrapper .sidebar-item i.fas {
       padding-right: 2rem; }
+    #sidebar-wrapper .sidebar-item.active {
+      color: #fff;
+      text-decoration: none; }
   #sidebar-wrapper .sidebar-item:hover {
     color: #fff;
     text-decoration: none; }
@@ -70,6 +77,8 @@ a {
     margin-bottom: 1rem;
     cursor: pointer;
     outline: none; }
+    #sidebar-wrapper .sidebar-toggler .fa-chevron-right {
+      padding-left: 0.5rem; }
   #sidebar-wrapper ul {
     list-style-type: none;
     padding: 0;

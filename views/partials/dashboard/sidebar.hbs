@@ -1,37 +1,37 @@
 <div class="bg-dark-blue shadow" id="sidebar-wrapper">
-  <div class="sidebar-heading font-weight-bold text-center black pt-4">
-    <span class="sidebar-item-text text-nowrap">Save My Password</span>
-    <span class="sidebar-item-text-minimized text-nowrap">SMP</span>
+  <div class="sidebar-heading font-weight-bold text-center text-white pt-4">
+    <span class="sidebar-show-max text-nowrap">Save My Password</span>
+    <span class="sidebar-show-min text-nowrap">SMP</span>
   </div>
 
   <hr class="sidebar-hr mt-3">
 
   <ul class="sidebar-items">
     <li>
-      <a href="/dashboard/" class="sidebar-item">
+      <a href="/dashboard/" class="sidebar-item {{#if (eq page 'dashboard-index')}} active {{/if}}">
         <i class="fas fa-tachometer-alt fa-fw"></i>
-        <span class="sidebar-item-text">Dashboard</span>
+        <span class="sidebar-show-max">Dashboard</span>
       </a>
     </li>
     <li>
-      <a href="/dashboard/passwords" class="sidebar-item">
+      <a href="/dashboard/passwords" class="sidebar-item {{#if (eq page 'dashboard-passwords')}} active {{/if}}">
         <i class="fas fa-key fa-fw"></i>
-        <span class="sidebar-item-text">Mots de passe</span>
+        <span class="sidebar-show-max">Mots de passe</span>
       </a>
     </li>
     <li>
-      <a href="/dashboard/generator" class="sidebar-item">
+      <a href="/dashboard/generator" class="sidebar-item {{#if (eq page 'dashboard-generator')}} active {{/if}}">
         <i class="fas fa-plus fa-fw"></i>
-        <span class="sidebar-item-text">Générateur de MdP</span>
+        <span class="sidebar-show-max">Générateur de MdP</span>
       </a>
     </li>
 
     <hr class="sidebar-hr">
 
     <li>
-      <a href="/dashboard/account" class="sidebar-item">
+      <a href="/dashboard/account" class="sidebar-item {{#if (eq page 'dashboard-account')}} active {{/if}}">
         <i class="fas fa-user fa-fw"></i>
-        <span class="sidebar-item-text">Mon Compte</span>
+        <span class="sidebar-show-max">Mon Compte</span>
       </a>
     </li>
 
@@ -40,7 +40,8 @@
     <li>
       <div class="text-center">
         <button class="rounded-circle sidebar-toggler">
-          <i class="no-grow fas fa-chevron-left fa-fw"></i>
+          <i class="no-grow sidebar-show-max fas fa-chevron-left fa-fw"></i>
+          <i class="no-grow sidebar-show-min fas fa-chevron-right fa-fw"></i>
         </button>
       </div>
     </li>
@@ -48,6 +49,6 @@
 
   <a href="/logout" class="sidebar-item">
     <i class="fas fa-sign-out-alt fa-fw"></i>
-    <span class="sidebar-item-text">Se déconnecter</span>
+    <span class="sidebar-show-max">Se déconnecter</span>
   </a>
 </div>

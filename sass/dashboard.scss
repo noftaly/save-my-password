@@ -9,12 +9,16 @@ a {
 }
 
 @mixin color-light {
-  color: $gray-dark-3;
+  color: $gray-light-1;
 }
 
+
+/**************************/
+/*         Sidebar        */
+/**************************/
 .bg-dark-blue {
-  background-color: $turquoise;
-  background-image: linear-gradient(180deg, $turquoise 10%, $turquoise-darker 100%);
+  background-color: $blue;
+  background-image: linear-gradient(180deg, $blue 10%, $blue-dark 100%);
   background-size: cover;
 }
 
@@ -23,13 +27,13 @@ a {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 
-  .sidebar-item-text-minimized { display: none; }
+  .sidebar-show-min { display: none; }
 
   &.minimized {
     padding-left: 1rem;
     padding-right: 1rem;
-    .sidebar-item-text { display: none; }
-    .sidebar-item-text-minimized { display: block; }
+    .sidebar-show-max { display: none; }
+    .sidebar-show-min { display: block; }
     .sidebar-items {
       width: 3rem;
       .fas { padding-right: 0; }
@@ -42,6 +46,9 @@ a {
     margin: 0rem !important;
     width: 15rem;
     height: 80vh;
+  }
+
+  &.minimizing .sidebar-items {
     -webkit-transition: all .25s ease-out;
     -moz-transition: all .25s ease-out;
     -o-transition: all .25s ease-out;
@@ -55,7 +62,7 @@ a {
   }
 
   .sidebar-hr {
-    background-color: $gray-dark-1;
+    background-color: $gray-light-1;
   }
 
   .sidebar-item {
@@ -75,6 +82,11 @@ a {
     i.fas {
       padding-right: 2rem;
     }
+
+    &.active {
+      color: $white;
+      text-decoration: none;
+    }
   }
 
   .sidebar-item:hover {
@@ -91,6 +103,10 @@ a {
     margin-bottom: 1rem;
     cursor: pointer;
     outline: none;
+
+    .fa-chevron-right {
+      padding-left: 0.5rem;
+    }
   }
 
   ul {
