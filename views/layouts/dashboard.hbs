@@ -14,11 +14,9 @@
       <div id="page-content-wrapper">
         {{> dashboard/nav}}
 
-        {{{body}}}
-
-        <footer class="footer mt-auto">
-          {{> footer}}
-        </footer>
+        <div class="container-fluid p-4" id="inner-content-wrapper">
+          {{{body}}}
+        </div>
       </div>
     </main>
 
