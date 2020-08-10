@@ -3,9 +3,10 @@ module.exports = {
   rules: {
     'capitalized-comments': 'off',
     // For some reason it cannot find this rule, so we disable it for now
-    'unicorn/prefer-replace-all': 'off',
+    // 'unicorn/prefer-replace-all': 'off',
   },
   env: {
+    node: true,
     browser: true,
     jquery: true,
   },
