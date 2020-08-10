@@ -117,6 +117,7 @@ app.get('/dashboard', ensureAuthenticated, dashboardController.getDashboardIndex
 app.get('/dashboard/passwords', ensureAuthenticated, dashboardController.getDashboardPasswords);
 app.get('/dashboard/generator', ensureAuthenticated, dashboardController.getDashboardGenerator);
 app.get('/dashboard/account', ensureAuthenticated, dashboardController.getDashboardAccount);
+app.get('/dashboard/*', (_req, res) => res.redirect(301, '/dashboard'));
 
 app.get('*', (_req, res) => {
   res.locals.code = 404;
